@@ -9,6 +9,7 @@
                 "main": "数据",
                 "areaType": "Area Type",
                 "area": "Area",
+                "industry": "Industry",
                 "jhipster-needle-menu-add-entry": "JHipster will add additional entities here (do not translate!)"
             },
             "account": {

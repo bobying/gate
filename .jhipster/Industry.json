@@ -1,0 +1,29 @@
+{
+    "fluentMethods": true,
+    "relationships": [
+        {
+            "relationshipName": "parent_industry",
+            "otherEntityName": "industry",
+            "relationshipType": "many-to-one",
+            "otherEntityField": "name"
+        }
+    ],
+    "fields": [
+        {
+            "fieldName": "name",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "code",
+            "fieldType": "String"
+        }
+    ],
+    "changelogDate": "20171025122303",
+    "dto": "mapstruct",
+    "service": "serviceClass",
+    "entityTableName": "industry",
+    "jpaMetamodelFiltering": true,
+    "pagination": "pager",
+    "microserviceName": "param",
+    "searchEngine": "elasticsearch"
+}

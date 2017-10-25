@@ -1,0 +1,28 @@
+{
+    "gateApp": {
+        "industry" : {
+            "home": {
+                "title": "Industries",
+                "createLabel": "创建新 Industry",
+                "createOrEditLabel": "创建或编辑 Industry",
+                "search": "查找 Industry"
+            },
+            "delete": {
+                "question": "你确定要删除 Industry {{ id }} 吗？"
+            },
+            "detail": {
+                "title": "Industry"
+            },
+            "name": "Name",
+            "code": "Code",
+            "parent_industry": "Parent Industry"
+        }
+    },
+    "paramApp": {
+        "industry" : {
+            "created": "Industry {{ param }} 创建成功",
+            "updated": "Industry {{ param }} 更新成功",
+            "deleted": "Industry {{ param }} 删除成功"
+        }
+    }
+}

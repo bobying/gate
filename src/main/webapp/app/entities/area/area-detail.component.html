@@ -1,0 +1,49 @@
+
+<div *ngIf="area">
+    <h2><span jhiTranslate="gateApp.area.detail.title">Area</span> {{area.id}}</h2>
+    <hr>
+    <jhi-alert-error></jhi-alert-error>
+    <dl class="row-md jh-entity-details">
+        <dt><span jhiTranslate="gateApp.area.name">Name</span></dt>
+        <dd>
+            <span>{{area.name}}</span>
+        </dd>
+        <dt><span jhiTranslate="gateApp.area.zip">Zip</span></dt>
+        <dd>
+            <span>{{area.zip}}</span>
+        </dd>
+        <dt><span jhiTranslate="gateApp.area.simple_name">Simple Name</span></dt>
+        <dd>
+            <span>{{area.simple_name}}</span>
+        </dd>
+        <dt><span jhiTranslate="gateApp.area.valid">Valid</span></dt>
+        <dd>
+            <span jhiTranslate="{{'gateApp.Valid.' + area.valid}}">{{area.valid}}</span>
+        </dd>
+        <dt><span jhiTranslate="gateApp.area.area_type">Area Type</span></dt>
+        <dd>
+            <div *ngIf="area.area_typeId">
+                <a [routerLink]="['/area-type', area.area_typeId]">{{area.area_typeName}}</a>
+            </div>
+        </dd>
+        <dt><span jhiTranslate="gateApp.area.parent_area">Parent Area</span></dt>
+        <dd>
+            <div *ngIf="area.parent_areaId">
+                <a [routerLink]="['/area', area.parent_areaId]">{{area.parent_areaName}}</a>
+            </div>
+        </dd>
+    </dl>
+
+    <button type="submit"
+            (click)="previousState()"
+            class="btn btn-info">
+        <span class="fa fa-arrow-left"></span>&nbsp;<span jhiTranslate="entity.action.back"> Back</span>
+    </button>
+
+    <button type="button"
+            [routerLink]="['/', { outlets: { popup: 'area/'+ area.id + '/edit'} }]"
+            replaceUrl="true"
+            class="btn btn-primary">
+        <span class="fa fa-pencil"></span>&nbsp;<span jhiTranslate="entity.action.edit"> Edit</span>
+    </button>
+</div>

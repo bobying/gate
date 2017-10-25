@@ -1,0 +1,44 @@
+{
+    "fluentMethods": true,
+    "relationships": [
+        {
+            "relationshipName": "area_type",
+            "otherEntityName": "area_type",
+            "relationshipType": "many-to-one",
+            "otherEntityField": "name"
+        },
+        {
+            "relationshipName": "parent_area",
+            "otherEntityName": "area",
+            "relationshipType": "many-to-one",
+            "otherEntityField": "name"
+        }
+    ],
+    "fields": [
+        {
+            "fieldName": "name",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "zip",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "simple_name",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "valid",
+            "fieldType": "Valid",
+            "fieldValues": "valid,invalid"
+        }
+    ],
+    "changelogDate": "20171025110956",
+    "dto": "mapstruct",
+    "service": "serviceClass",
+    "entityTableName": "area",
+    "jpaMetamodelFiltering": true,
+    "pagination": "pager",
+    "microserviceName": "param",
+    "searchEngine": "elasticsearch"
+}

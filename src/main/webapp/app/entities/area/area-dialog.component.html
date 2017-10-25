@@ -1,0 +1,61 @@
+<form name="editForm" role="form" novalidate (ngSubmit)="save()" #editForm="ngForm">
+
+    <div class="modal-header">
+        <h4 class="modal-title" id="myAreaLabel" jhiTranslate="gateApp.area.home.createOrEditLabel">Create or edit a Area</h4>
+        <button type="button" class="close" data-dismiss="modal" aria-hidden="true"
+                (click)="clear()">&times;</button>
+    </div>
+    <div class="modal-body">
+        <jhi-alert-error></jhi-alert-error>
+        <div class="form-group" [hidden]="!area.id">
+            <label for="id" jhiTranslate="global.field.id">ID</label>
+            <input type="text" class="form-control" id="id" name="id"
+                   [(ngModel)]="area.id" readonly />
+        </div>
+        <div class="form-group">
+            <label class="form-control-label" jhiTranslate="gateApp.area.name" for="field_name">Name</label>
+            <input type="text" class="form-control" name="name" id="field_name"
+                [(ngModel)]="area.name"  />
+        </div>
+        <div class="form-group">
+            <label class="form-control-label" jhiTranslate="gateApp.area.zip" for="field_zip">Zip</label>
+            <input type="text" class="form-control" name="zip" id="field_zip"
+                [(ngModel)]="area.zip"  />
+        </div>
+        <div class="form-group">
+            <label class="form-control-label" jhiTranslate="gateApp.area.simple_name" for="field_simple_name">Simple Name</label>
+            <input type="text" class="form-control" name="simple_name" id="field_simple_name"
+                [(ngModel)]="area.simple_name"  />
+        </div>
+        <div class="form-group">
+            <label class="form-control-label" jhiTranslate="gateApp.area.valid" for="field_valid">Valid</label>
+            <select class="form-control" name="valid" [(ngModel)]="area.valid" id="field_valid" >
+                <option value="valid">{{'gateApp.Valid.valid' | translate}}</option>
+                <option value="invalid">{{'gateApp.Valid.invalid' | translate}}</option>
+            </select>
+        </div>
+
+        <div class="form-group">
+            <label class="form-control-label" jhiTranslate="gateApp.area.area_type" for="field_area_type">Area Type</label>
+            <select class="form-control" id="field_area_type" name="area_type" [(ngModel)]="area.area_typeId" >
+                <option [ngValue]="null"></option>
+                <option [ngValue]="area_typeOption.id" *ngFor="let area_typeOption of area_types; trackBy: trackArea_typeById">{{area_typeOption.name}}</option>
+            </select>
+        </div>
+        <div class="form-group">
+            <label class="form-control-label" jhiTranslate="gateApp.area.parent_area" for="field_parent_area">Parent Area</label>
+            <select class="form-control" id="field_parent_area" name="parent_area" [(ngModel)]="area.parent_areaId" >
+                <option [ngValue]="null"></option>
+                <option [ngValue]="areaOption.id" *ngFor="let areaOption of areas; trackBy: trackAreaById">{{areaOption.name}}</option>
+            </select>
+        </div>
+    </div>
+    <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-dismiss="modal" (click)="clear()">
+            <span class="fa fa-ban"></span>&nbsp;<span jhiTranslate="entity.action.cancel">Cancel</span>
+        </button>
+        <button type="submit" [disabled]="editForm.form.invalid || isSaving" class="btn btn-primary">
+            <span class="fa fa-save"></span>&nbsp;<span jhiTranslate="entity.action.save">Save</span>
+        </button>
+    </div>
+</form>

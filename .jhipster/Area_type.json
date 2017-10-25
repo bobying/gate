@@ -1,0 +1,23 @@
+{
+    "fluentMethods": true,
+    "relationships": [],
+    "fields": [
+        {
+            "fieldName": "name",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "valid",
+            "fieldType": "Valid",
+            "fieldValues": "valid,invalid"
+        }
+    ],
+    "changelogDate": "20171025110548",
+    "dto": "mapstruct",
+    "service": "serviceClass",
+    "entityTableName": "area_type",
+    "jpaMetamodelFiltering": true,
+    "pagination": "no",
+    "microserviceName": "param",
+    "searchEngine": "elasticsearch"
+}

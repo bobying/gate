@@ -2,7 +2,8 @@
   "generator-jhipster": {
     "promptValues": {
       "packageName": "com.cloud.gate",
-      "nativeLanguage": "zh-cn"
+      "nativeLanguage": "zh-cn",
+      "microservicePath": "../param"
     },
     "jhipsterVersion": "4.10.0",
     "baseName": "gate",

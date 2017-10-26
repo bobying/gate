@@ -16,13 +16,9 @@
             "name": "Name",
             "nickname": "Nickname",
             "avatar": "Avatar",
-            "telephone": "Telephone",
             "company": "Company",
             "job_title": "Job Title",
-            "exper_years": "Exper Years",
-            "introduction": "Introduction",
-            "wechat": "Wechat",
-            "email": "Email"
+            "company_id": "Company Id"
         }
     },
     "userApp": {

@@ -9,6 +9,8 @@ import { JhiEventManager, JhiAlertService, JhiDataUtils } from 'ng-jhipster';
 import { User } from './user.model';
 import { UserPopupService } from './user-popup.service';
 import { UserService } from './user.service';
+import { Company, CompanyService } from '../company';
+import { ResponseWrapper } from '../../shared';
 
 @Component({
     selector: 'jhi-user-dialog',
@@ -19,11 +21,14 @@ export class UserDialogComponent implements OnInit {
     user: User;
     isSaving: boolean;
 
+    companies: Company[];
+
     constructor(
         public activeModal: NgbActiveModal,
         private dataUtils: JhiDataUtils,
         private jhiAlertService: JhiAlertService,
         private userService: UserService,
+        private companyService: CompanyService,
         private elementRef: ElementRef,
         private eventManager: JhiEventManager
     ) {
@@ -31,6 +36,8 @@ export class UserDialogComponent implements OnInit {
 
     ngOnInit() {
         this.isSaving = false;
+        this.companyService.query()
+            .subscribe((res: ResponseWrapper) => { this.companies = res.json; }, (res: ResponseWrapper) => this.onError(res.json));
     }
 
     byteSize(field) {
@@ -81,6 +88,10 @@ export class UserDialogComponent implements OnInit {
 
     private onError(error: any) {
         this.jhiAlertService.error(error.message, null, null);
+    }
+
+    trackCompanyById(index: number, item: Company) {
+        return item.id;
     }
 }
 

@@ -18,14 +18,19 @@
                 [(ngModel)]="company.name"  />
         </div>
         <div class="form-group">
-            <label class="form-control-label" jhiTranslate="gateApp.company.introduction" for="field_introduction">Introduction</label>
-            <textarea class="form-control" name="introduction" id="field_introduction"
-                [(ngModel)]="company.introduction"  ></textarea>
+            <label class="form-control-label" jhiTranslate="gateApp.company.website" for="field_website">Website</label>
+            <input type="text" class="form-control" name="website" id="field_website"
+                [(ngModel)]="company.website"  />
         </div>
         <div class="form-group">
-            <label class="form-control-label" jhiTranslate="gateApp.company.office_url" for="field_office_url">Office Url</label>
-            <input type="text" class="form-control" name="office_url" id="field_office_url"
-                [(ngModel)]="company.office_url"  />
+            <label class="form-control-label" jhiTranslate="gateApp.company.code" for="field_code">Code</label>
+            <input type="text" class="form-control" name="code" id="field_code"
+                [(ngModel)]="company.code"  />
+        </div>
+        <div class="form-group">
+            <label class="form-control-label" jhiTranslate="gateApp.company.introduce" for="field_introduce">Introduce</label>
+            <textarea class="form-control" name="introduce" id="field_introduce"
+                [(ngModel)]="company.introduce"  ></textarea>
         </div>
 
     </div>

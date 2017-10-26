@@ -1,6 +1,13 @@
 {
     "fluentMethods": true,
-    "relationships": [],
+    "relationships": [
+        {
+            "relationshipName": "company_id",
+            "otherEntityName": "company",
+            "relationshipType": "many-to-one",
+            "otherEntityField": "name"
+        }
+    ],
     "fields": [
         {
             "fieldName": "name",
@@ -16,36 +23,15 @@
             "fieldTypeBlobContent": "image"
         },
         {
-            "fieldName": "telephone",
-            "fieldType": "String"
-        },
-        {
             "fieldName": "company",
             "fieldType": "String"
         },
         {
             "fieldName": "job_title",
             "fieldType": "String"
-        },
-        {
-            "fieldName": "exper_years",
-            "fieldType": "Integer",
-            "fieldValidateRules": []
-        },
-        {
-            "fieldName": "introduction",
-            "fieldType": "String"
-        },
-        {
-            "fieldName": "wechat",
-            "fieldType": "String"
-        },
-        {
-            "fieldName": "email",
-            "fieldType": "String"
         }
     ],
-    "changelogDate": "20171026022916",
+    "changelogDate": "20171026071727",
     "dto": "mapstruct",
     "service": "serviceClass",
     "entityTableName": "user",

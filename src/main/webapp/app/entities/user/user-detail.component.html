@@ -21,10 +21,6 @@
                 {{user.avatarContentType}}, {{byteSize(user.avatar)}}
             </div>
         </dd>
-        <dt><span jhiTranslate="gateApp.user.telephone">Telephone</span></dt>
-        <dd>
-            <span>{{user.telephone}}</span>
-        </dd>
         <dt><span jhiTranslate="gateApp.user.company">Company</span></dt>
         <dd>
             <span>{{user.company}}</span>
@@ -33,21 +29,11 @@
         <dd>
             <span>{{user.job_title}}</span>
         </dd>
-        <dt><span jhiTranslate="gateApp.user.exper_years">Exper Years</span></dt>
+        <dt><span jhiTranslate="gateApp.user.company_id">Company Id</span></dt>
         <dd>
-            <span>{{user.exper_years}}</span>
-        </dd>
-        <dt><span jhiTranslate="gateApp.user.introduction">Introduction</span></dt>
-        <dd>
-            <span>{{user.introduction}}</span>
-        </dd>
-        <dt><span jhiTranslate="gateApp.user.wechat">Wechat</span></dt>
-        <dd>
-            <span>{{user.wechat}}</span>
-        </dd>
-        <dt><span jhiTranslate="gateApp.user.email">Email</span></dt>
-        <dd>
-            <span>{{user.email}}</span>
+            <div *ngIf="user.company_idId">
+                <a [routerLink]="['/company', user.company_idId]">{{user.company_idName}}</a>
+            </div>
         </dd>
     </dl>
 

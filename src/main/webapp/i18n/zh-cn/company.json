@@ -14,8 +14,9 @@
                 "title": "Company"
             },
             "name": "Name",
-            "introduction": "Introduction",
-            "office_url": "Office Url"
+            "website": "Website",
+            "code": "Code",
+            "introduce": "Introduce"
         }
     },
     "userApp": {

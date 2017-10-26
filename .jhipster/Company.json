@@ -7,16 +7,20 @@
             "fieldType": "String"
         },
         {
-            "fieldName": "introduction",
-            "fieldType": "byte[]",
-            "fieldTypeBlobContent": "text"
+            "fieldName": "website",
+            "fieldType": "String"
         },
         {
-            "fieldName": "office_url",
+            "fieldName": "code",
             "fieldType": "String"
+        },
+        {
+            "fieldName": "introduce",
+            "fieldType": "byte[]",
+            "fieldTypeBlobContent": "text"
         }
     ],
-    "changelogDate": "20171026020231",
+    "changelogDate": "20171026071445",
     "dto": "mapstruct",
     "service": "serviceClass",
     "entityTableName": "company",

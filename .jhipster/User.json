@@ -1,0 +1,56 @@
+{
+    "fluentMethods": true,
+    "relationships": [],
+    "fields": [
+        {
+            "fieldName": "name",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "nickname",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "avatar",
+            "fieldType": "byte[]",
+            "fieldTypeBlobContent": "image"
+        },
+        {
+            "fieldName": "telephone",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "company",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "job_title",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "exper_years",
+            "fieldType": "Integer",
+            "fieldValidateRules": []
+        },
+        {
+            "fieldName": "introduction",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "wechat",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "email",
+            "fieldType": "String"
+        }
+    ],
+    "changelogDate": "20171026022916",
+    "dto": "mapstruct",
+    "service": "serviceClass",
+    "entityTableName": "user",
+    "jpaMetamodelFiltering": true,
+    "pagination": "pager",
+    "microserviceName": "user",
+    "searchEngine": "elasticsearch"
+}

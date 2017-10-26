@@ -3,7 +3,7 @@
     "promptValues": {
       "packageName": "com.cloud.gate",
       "nativeLanguage": "zh-cn",
-      "microservicePath": "../param"
+      "microservicePath": "../user"
     },
     "jhipsterVersion": "4.10.0",
     "baseName": "gate",

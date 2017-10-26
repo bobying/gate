@@ -1,0 +1,35 @@
+{
+    "gateApp": {
+        "user" : {
+            "home": {
+                "title": "Users",
+                "createLabel": "Create a new User",
+                "createOrEditLabel": "Create or edit a User",
+                "search": "Search for User"
+            },
+            "delete": {
+                "question": "Are you sure you want to delete User {{ id }}?"
+            },
+            "detail": {
+                "title": "User"
+            },
+            "name": "Name",
+            "nickname": "Nickname",
+            "avatar": "Avatar",
+            "telephone": "Telephone",
+            "company": "Company",
+            "job_title": "Job Title",
+            "exper_years": "Exper Years",
+            "introduction": "Introduction",
+            "wechat": "Wechat",
+            "email": "Email"
+        }
+    },
+    "userApp": {
+        "user" : {
+            "created": "A new User is created with identifier {{ param }}",
+            "updated": "A User is updated with identifier {{ param }}",
+            "deleted": "A User is deleted with identifier {{ param }}"
+        }
+    }
+}

@@ -10,6 +10,8 @@
                 "areaType": "Area Type",
                 "area": "Area",
                 "industry": "Industry",
+                "company": "Company",
+                "user": "User",
                 "jhipster-needle-menu-add-entry": "JHipster will add additional entities here (do not translate!)"
             },
             "account": {

@@ -1,0 +1,66 @@
+
+<div *ngIf="user">
+    <h2><span jhiTranslate="gateApp.user.detail.title">User</span> {{user.id}}</h2>
+    <hr>
+    <jhi-alert-error></jhi-alert-error>
+    <dl class="row-md jh-entity-details">
+        <dt><span jhiTranslate="gateApp.user.name">Name</span></dt>
+        <dd>
+            <span>{{user.name}}</span>
+        </dd>
+        <dt><span jhiTranslate="gateApp.user.nickname">Nickname</span></dt>
+        <dd>
+            <span>{{user.nickname}}</span>
+        </dd>
+        <dt><span jhiTranslate="gateApp.user.avatar">Avatar</span></dt>
+        <dd>
+            <div *ngIf="user.avatar">
+                <a (click)="openFile(user.avatarContentType, user.avatar)">
+                    <img [src]="'data:' + user.avatarContentType + ';base64,' + user.avatar" style="max-width: 100%;" alt="user image"/>
+                </a>
+                {{user.avatarContentType}}, {{byteSize(user.avatar)}}
+            </div>
+        </dd>
+        <dt><span jhiTranslate="gateApp.user.telephone">Telephone</span></dt>
+        <dd>
+            <span>{{user.telephone}}</span>
+        </dd>
+        <dt><span jhiTranslate="gateApp.user.company">Company</span></dt>
+        <dd>
+            <span>{{user.company}}</span>
+        </dd>
+        <dt><span jhiTranslate="gateApp.user.job_title">Job Title</span></dt>
+        <dd>
+            <span>{{user.job_title}}</span>
+        </dd>
+        <dt><span jhiTranslate="gateApp.user.exper_years">Exper Years</span></dt>
+        <dd>
+            <span>{{user.exper_years}}</span>
+        </dd>
+        <dt><span jhiTranslate="gateApp.user.introduction">Introduction</span></dt>
+        <dd>
+            <span>{{user.introduction}}</span>
+        </dd>
+        <dt><span jhiTranslate="gateApp.user.wechat">Wechat</span></dt>
+        <dd>
+            <span>{{user.wechat}}</span>
+        </dd>
+        <dt><span jhiTranslate="gateApp.user.email">Email</span></dt>
+        <dd>
+            <span>{{user.email}}</span>
+        </dd>
+    </dl>
+
+    <button type="submit"
+            (click)="previousState()"
+            class="btn btn-info">
+        <span class="fa fa-arrow-left"></span>&nbsp;<span jhiTranslate="entity.action.back"> Back</span>
+    </button>
+
+    <button type="button"
+            [routerLink]="['/', { outlets: { popup: 'user/'+ user.id + '/edit'} }]"
+            replaceUrl="true"
+            class="btn btn-primary">
+        <span class="fa fa-pencil"></span>&nbsp;<span jhiTranslate="entity.action.edit"> Edit</span>
+    </button>
+</div>

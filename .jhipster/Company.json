@@ -1,0 +1,27 @@
+{
+    "fluentMethods": true,
+    "relationships": [],
+    "fields": [
+        {
+            "fieldName": "name",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "introduction",
+            "fieldType": "byte[]",
+            "fieldTypeBlobContent": "text"
+        },
+        {
+            "fieldName": "office_url",
+            "fieldType": "String"
+        }
+    ],
+    "changelogDate": "20171026020231",
+    "dto": "mapstruct",
+    "service": "serviceClass",
+    "entityTableName": "company",
+    "jpaMetamodelFiltering": true,
+    "pagination": "pager",
+    "microserviceName": "user",
+    "searchEngine": "elasticsearch"
+}

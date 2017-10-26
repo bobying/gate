@@ -9,6 +9,9 @@ export class User implements BaseEntity {
         public avatar?: any,
         public company?: string,
         public job_title?: string,
+        public telephone?: string,
+        public area?: number,
+        public industry?: string,
         public company_idId?: number,
     ) {
     }

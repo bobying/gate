@@ -31,9 +31,9 @@
             <tr jhiSort [(predicate)]="predicate" [(ascending)]="reverse" [callback]="transition.bind(this)">
             <th jhiSortBy="id"><span jhiTranslate="global.field.id">ID</span> <span class="fa fa-sort"></span></th>
             <th jhiSortBy="name"><span jhiTranslate="gateApp.company.name">Name</span> <span class="fa fa-sort"></span></th>
-            <th jhiSortBy="website"><span jhiTranslate="gateApp.company.website">Website</span> <span class="fa fa-sort"></span></th>
-            <th jhiSortBy="code"><span jhiTranslate="gateApp.company.code">Code</span> <span class="fa fa-sort"></span></th>
             <th jhiSortBy="introduce"><span jhiTranslate="gateApp.company.introduce">Introduce</span> <span class="fa fa-sort"></span></th>
+            <th jhiSortBy="code"><span jhiTranslate="gateApp.company.code">Code</span> <span class="fa fa-sort"></span></th>
+            <th jhiSortBy="website"><span jhiTranslate="gateApp.company.website">Website</span> <span class="fa fa-sort"></span></th>
             <th></th>
             </tr>
             </thead>
@@ -41,9 +41,9 @@
             <tr *ngFor="let company of companies ;trackBy: trackId">
                 <td><a [routerLink]="['../company', company.id ]">{{company.id}}</a></td>
                 <td>{{company.name}}</td>
-                <td>{{company.website}}</td>
-                <td>{{company.code}}</td>
                 <td>{{company.introduce}}</td>
+                <td>{{company.code}}</td>
+                <td>{{company.website}}</td>
                 <td class="text-right">
                     <div class="btn-group flex-btn-group-container">
                         <button type="submit"

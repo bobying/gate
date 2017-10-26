@@ -18,6 +18,9 @@
             "avatar": "Avatar",
             "company": "Company",
             "job_title": "Job Title",
+            "telephone": "Telephone",
+            "area": "Area",
+            "industry": "Industry",
             "company_id": "Company Id"
         }
     },

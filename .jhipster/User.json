@@ -29,9 +29,21 @@
         {
             "fieldName": "job_title",
             "fieldType": "String"
+        },
+        {
+            "fieldName": "telephone",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "area",
+            "fieldType": "Long"
+        },
+        {
+            "fieldName": "industry",
+            "fieldType": "String"
         }
     ],
-    "changelogDate": "20171026071727",
+    "changelogDate": "20171026084015",
     "dto": "mapstruct",
     "service": "serviceClass",
     "entityTableName": "user",

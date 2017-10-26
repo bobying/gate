@@ -14,9 +14,9 @@
                 "title": "Company"
             },
             "name": "Name",
-            "website": "Website",
+            "introduce": "Introduce",
             "code": "Code",
-            "introduce": "Introduce"
+            "website": "Website"
         }
     },
     "userApp": {

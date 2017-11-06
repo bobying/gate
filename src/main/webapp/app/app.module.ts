@@ -19,6 +19,7 @@ import {
     JhiMainComponent,
     LayoutRoutingModule,
     NavbarComponent,
+    SidebarComponent,
     FooterComponent,
     ProfileService,
     PageRibbonComponent,
@@ -41,6 +42,7 @@ import {
     declarations: [
         JhiMainComponent,
         NavbarComponent,
+        SidebarComponent,
         ErrorComponent,
         PageRibbonComponent,
         ActiveMenuDirective,

@@ -1,0 +1,32 @@
+{
+    "gateApp": {
+        "dictEn2Cn" : {
+            "home": {
+                "title": "Dict En 2 Cns",
+                "createLabel": "创建新 Dict En 2 Cn",
+                "createOrEditLabel": "创建或编辑 Dict En 2 Cn",
+                "search": "查找 Dict En 2 Cn"
+            },
+            "delete": {
+                "question": "你确定要删除 Dict En 2 Cn {{ id }} 吗？"
+            },
+            "detail": {
+                "title": "Dict En 2 Cn"
+            },
+            "english": "English",
+            "chinese": "Chinese",
+            "hits": "Hits",
+            "enable": "Enable",
+            "modified_date": "Modified Date",
+            "consumed_date": "Consumed Date",
+            "source": "Source"
+        }
+    },
+    "translateApp": {
+        "dictEn2Cn" : {
+            "created": "Dict En 2 Cn {{ param }} 创建成功",
+            "updated": "Dict En 2 Cn {{ param }} 更新成功",
+            "deleted": "Dict En 2 Cn {{ param }} 删除成功"
+        }
+    }
+}

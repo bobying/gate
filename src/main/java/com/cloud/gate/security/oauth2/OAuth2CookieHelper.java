@@ -288,6 +288,7 @@ public class OAuth2CookieHelper {
         }
         //if not explicitly defined, use top-level domain
         domain = request.getServerName().toLowerCase();
+        domain = "www.example.com";
         //strip off leading www.
         if (domain.startsWith("www.")) {
             domain = domain.substring(4);

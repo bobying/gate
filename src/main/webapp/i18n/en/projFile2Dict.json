@@ -1,0 +1,27 @@
+{
+    "gateApp": {
+        "projFile2Dict" : {
+            "home": {
+                "title": "Proj File 2 Dicts",
+                "createLabel": "Create a new Proj File 2 Dict",
+                "createOrEditLabel": "Create or edit a Proj File 2 Dict",
+                "search": "Search for Proj File 2 Dict"
+            },
+            "delete": {
+                "question": "Are you sure you want to delete Proj File 2 Dict {{ id }}?"
+            },
+            "detail": {
+                "title": "Proj File 2 Dict"
+            },
+            "projFiles": "Proj Files",
+            "dict": "Dict"
+        }
+    },
+    "translateApp": {
+        "projFile2Dict" : {
+            "created": "A new Proj File 2 Dict is created with identifier {{ param }}",
+            "updated": "A Proj File 2 Dict is updated with identifier {{ param }}",
+            "deleted": "A Proj File 2 Dict is deleted with identifier {{ param }}"
+        }
+    }
+}

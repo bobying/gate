@@ -1,0 +1,27 @@
+{
+    "gateApp": {
+        "dictSource" : {
+            "home": {
+                "title": "Dict Sources",
+                "createLabel": "Create a new Dict Source",
+                "createOrEditLabel": "Create or edit a Dict Source",
+                "search": "Search for Dict Source"
+            },
+            "delete": {
+                "question": "Are you sure you want to delete Dict Source {{ id }}?"
+            },
+            "detail": {
+                "title": "Dict Source"
+            },
+            "name": "Name",
+            "sourceType": "Source Type"
+        }
+    },
+    "translateApp": {
+        "dictSource" : {
+            "created": "A new Dict Source is created with identifier {{ param }}",
+            "updated": "A Dict Source is updated with identifier {{ param }}",
+            "deleted": "A Dict Source is deleted with identifier {{ param }}"
+        }
+    }
+}

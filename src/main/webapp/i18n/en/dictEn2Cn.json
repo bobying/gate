@@ -1,0 +1,32 @@
+{
+    "gateApp": {
+        "dictEn2Cn" : {
+            "home": {
+                "title": "Dict En 2 Cns",
+                "createLabel": "Create a new Dict En 2 Cn",
+                "createOrEditLabel": "Create or edit a Dict En 2 Cn",
+                "search": "Search for Dict En 2 Cn"
+            },
+            "delete": {
+                "question": "Are you sure you want to delete Dict En 2 Cn {{ id }}?"
+            },
+            "detail": {
+                "title": "Dict En 2 Cn"
+            },
+            "english": "English",
+            "chinese": "Chinese",
+            "hits": "Hits",
+            "enable": "Enable",
+            "modified_date": "Modified Date",
+            "consumed_date": "Consumed Date",
+            "source": "Source"
+        }
+    },
+    "translateApp": {
+        "dictEn2Cn" : {
+            "created": "A new Dict En 2 Cn is created with identifier {{ param }}",
+            "updated": "A Dict En 2 Cn is updated with identifier {{ param }}",
+            "deleted": "A Dict En 2 Cn is deleted with identifier {{ param }}"
+        }
+    }
+}

@@ -12,6 +12,13 @@
                 "industry": "Industry",
                 "company": "Company",
                 "user": "User",
+                "dictEn2Cn": "Dict En 2 Cn",
+                "dictSource": "Dict Source",
+                "dictSourceType": "Dict Source Type",
+                "language": "Language",
+                "projFile2Dict": "Proj File 2 Dict",
+                "projFiles": "Proj Files",
+                "proj": "Proj",
                 "jhipster-needle-menu-add-entry": "JHipster will add additional entities here (do not translate!)"
             },
             "account": {

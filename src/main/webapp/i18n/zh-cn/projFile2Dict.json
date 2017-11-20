@@ -1,0 +1,27 @@
+{
+    "gateApp": {
+        "projFile2Dict" : {
+            "home": {
+                "title": "Proj File 2 Dicts",
+                "createLabel": "创建新 Proj File 2 Dict",
+                "createOrEditLabel": "创建或编辑 Proj File 2 Dict",
+                "search": "查找 Proj File 2 Dict"
+            },
+            "delete": {
+                "question": "你确定要删除 Proj File 2 Dict {{ id }} 吗？"
+            },
+            "detail": {
+                "title": "Proj File 2 Dict"
+            },
+            "projFiles": "Proj Files",
+            "dict": "Dict"
+        }
+    },
+    "translateApp": {
+        "projFile2Dict" : {
+            "created": "Proj File 2 Dict {{ param }} 创建成功",
+            "updated": "Proj File 2 Dict {{ param }} 更新成功",
+            "deleted": "Proj File 2 Dict {{ param }} 删除成功"
+        }
+    }
+}

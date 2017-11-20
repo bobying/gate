@@ -1,0 +1,28 @@
+{
+    "gateApp": {
+        "proj" : {
+            "home": {
+                "title": "Projs",
+                "createLabel": "创建新 Proj",
+                "createOrEditLabel": "创建或编辑 Proj",
+                "search": "查找 Proj"
+            },
+            "delete": {
+                "question": "你确定要删除 Proj {{ id }} 吗？"
+            },
+            "detail": {
+                "title": "Proj"
+            },
+            "name": "Name",
+            "desc": "Desc",
+            "url": "Url"
+        }
+    },
+    "translateApp": {
+        "proj" : {
+            "created": "Proj {{ param }} 创建成功",
+            "updated": "Proj {{ param }} 更新成功",
+            "deleted": "Proj {{ param }} 删除成功"
+        }
+    }
+}

@@ -1,0 +1,43 @@
+
+<div *ngIf="projFiles">
+    <h2><span jhiTranslate="gateApp.projFiles.detail.title">Proj Files</span> {{projFiles.id}}</h2>
+    <hr>
+    <jhi-alert-error></jhi-alert-error>
+    <dl class="row-md jh-entity-details">
+        <dt><span jhiTranslate="gateApp.projFiles.name">Name</span></dt>
+        <dd>
+            <span>{{projFiles.name}}</span>
+        </dd>
+        <dt><span jhiTranslate="gateApp.projFiles.path">Path</span></dt>
+        <dd>
+            <span>{{projFiles.path}}</span>
+        </dd>
+        <dt><span jhiTranslate="gateApp.projFiles.sourceLanguagePath">Source Language Path</span></dt>
+        <dd>
+            <span>{{projFiles.sourceLanguagePath}}</span>
+        </dd>
+        <dt><span jhiTranslate="gateApp.projFiles.targetLanguagePath">Target Language Path</span></dt>
+        <dd>
+            <span>{{projFiles.targetLanguagePath}}</span>
+        </dd>
+        <dt><span jhiTranslate="gateApp.projFiles.proj">Proj</span></dt>
+        <dd>
+            <div *ngIf="projFiles.projId">
+                <a [routerLink]="['/proj', projFiles.projId]">{{projFiles.projName}}</a>
+            </div>
+        </dd>
+    </dl>
+
+    <button type="submit"
+            (click)="previousState()"
+            class="btn btn-info">
+        <span class="fa fa-arrow-left"></span>&nbsp;<span jhiTranslate="entity.action.back"> Back</span>
+    </button>
+
+    <button type="button"
+            [routerLink]="['/', { outlets: { popup: 'proj-files/'+ projFiles.id + '/edit'} }]"
+            replaceUrl="true"
+            class="btn btn-primary">
+        <span class="fa fa-pencil"></span>&nbsp;<span jhiTranslate="entity.action.edit"> Edit</span>
+    </button>
+</div>

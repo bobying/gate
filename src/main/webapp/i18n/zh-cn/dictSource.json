@@ -1,0 +1,27 @@
+{
+    "gateApp": {
+        "dictSource" : {
+            "home": {
+                "title": "Dict Sources",
+                "createLabel": "创建新 Dict Source",
+                "createOrEditLabel": "创建或编辑 Dict Source",
+                "search": "查找 Dict Source"
+            },
+            "delete": {
+                "question": "你确定要删除 Dict Source {{ id }} 吗？"
+            },
+            "detail": {
+                "title": "Dict Source"
+            },
+            "name": "Name",
+            "sourceType": "Source Type"
+        }
+    },
+    "translateApp": {
+        "dictSource" : {
+            "created": "Dict Source {{ param }} 创建成功",
+            "updated": "Dict Source {{ param }} 更新成功",
+            "deleted": "Dict Source {{ param }} 删除成功"
+        }
+    }
+}

@@ -1,0 +1,33 @@
+
+<div *ngIf="proj">
+    <h2><span jhiTranslate="gateApp.proj.detail.title">Proj</span> {{proj.id}}</h2>
+    <hr>
+    <jhi-alert-error></jhi-alert-error>
+    <dl class="row-md jh-entity-details">
+        <dt><span jhiTranslate="gateApp.proj.name">Name</span></dt>
+        <dd>
+            <span>{{proj.name}}</span>
+        </dd>
+        <dt><span jhiTranslate="gateApp.proj.desc">Desc</span></dt>
+        <dd>
+            <span>{{proj.desc}}</span>
+        </dd>
+        <dt><span jhiTranslate="gateApp.proj.url">Url</span></dt>
+        <dd>
+            <span>{{proj.url}}</span>
+        </dd>
+    </dl>
+
+    <button type="submit"
+            (click)="previousState()"
+            class="btn btn-info">
+        <span class="fa fa-arrow-left"></span>&nbsp;<span jhiTranslate="entity.action.back"> Back</span>
+    </button>
+
+    <button type="button"
+            [routerLink]="['/', { outlets: { popup: 'proj/'+ proj.id + '/edit'} }]"
+            replaceUrl="true"
+            class="btn btn-primary">
+        <span class="fa fa-pencil"></span>&nbsp;<span jhiTranslate="entity.action.edit"> Edit</span>
+    </button>
+</div>

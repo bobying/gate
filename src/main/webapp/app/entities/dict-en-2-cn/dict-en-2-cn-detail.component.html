@@ -1,0 +1,51 @@
+
+<div *ngIf="dictEn2Cn">
+    <h2><span jhiTranslate="gateApp.dictEn2Cn.detail.title">Dict En 2 Cn</span> {{dictEn2Cn.id}}</h2>
+    <hr>
+    <jhi-alert-error></jhi-alert-error>
+    <dl class="row-md jh-entity-details">
+        <dt><span jhiTranslate="gateApp.dictEn2Cn.english">English</span></dt>
+        <dd>
+            <span>{{dictEn2Cn.english}}</span>
+        </dd>
+        <dt><span jhiTranslate="gateApp.dictEn2Cn.chinese">Chinese</span></dt>
+        <dd>
+            <span>{{dictEn2Cn.chinese}}</span>
+        </dd>
+        <dt><span jhiTranslate="gateApp.dictEn2Cn.hits">Hits</span></dt>
+        <dd>
+            <span>{{dictEn2Cn.hits}}</span>
+        </dd>
+        <dt><span jhiTranslate="gateApp.dictEn2Cn.enable">Enable</span></dt>
+        <dd>
+            <span jhiTranslate="{{'gateApp.Enabled.' + dictEn2Cn.enable}}">{{dictEn2Cn.enable}}</span>
+        </dd>
+        <dt><span jhiTranslate="gateApp.dictEn2Cn.modified_date">Modified Date</span></dt>
+        <dd>
+            <span>{{dictEn2Cn.modified_date | date:'medium'}}</span>
+        </dd>
+        <dt><span jhiTranslate="gateApp.dictEn2Cn.consumed_date">Consumed Date</span></dt>
+        <dd>
+            <span>{{dictEn2Cn.consumed_date | date:'medium'}}</span>
+        </dd>
+        <dt><span jhiTranslate="gateApp.dictEn2Cn.source">Source</span></dt>
+        <dd>
+            <div *ngIf="dictEn2Cn.sourceId">
+                <a [routerLink]="['/dict-source', dictEn2Cn.sourceId]">{{dictEn2Cn.sourceName}}</a>
+            </div>
+        </dd>
+    </dl>
+
+    <button type="submit"
+            (click)="previousState()"
+            class="btn btn-info">
+        <span class="fa fa-arrow-left"></span>&nbsp;<span jhiTranslate="entity.action.back"> Back</span>
+    </button>
+
+    <button type="button"
+            [routerLink]="['/', { outlets: { popup: 'dict-en-2-cn/'+ dictEn2Cn.id + '/edit'} }]"
+            replaceUrl="true"
+            class="btn btn-primary">
+        <span class="fa fa-pencil"></span>&nbsp;<span jhiTranslate="entity.action.edit"> Edit</span>
+    </button>
+</div>

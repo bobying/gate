@@ -10,6 +10,6 @@ export class ElasticsearchReindexService {
     ) { }
 
     reindex(): Observable<Response> {
-        return this.http.post('source/api/elasticsearch/index', {});
+        return this.http.post('translate/api/elasticsearch/index', {});
     }
 }

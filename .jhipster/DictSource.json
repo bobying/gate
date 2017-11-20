@@ -1,0 +1,25 @@
+{
+    "fluentMethods": true,
+    "relationships": [
+        {
+            "relationshipName": "sourceType",
+            "otherEntityName": "dictSourceType",
+            "relationshipType": "many-to-one",
+            "otherEntityField": "name"
+        }
+    ],
+    "fields": [
+        {
+            "fieldName": "name",
+            "fieldType": "String"
+        }
+    ],
+    "changelogDate": "20171108125533",
+    "dto": "mapstruct",
+    "service": "serviceClass",
+    "entityTableName": "dict_source",
+    "jpaMetamodelFiltering": true,
+    "pagination": "pager",
+    "microserviceName": "translate",
+    "searchEngine": "elasticsearch"
+}

@@ -1,0 +1,37 @@
+{
+    "fluentMethods": true,
+    "relationships": [
+        {
+            "relationshipName": "proj",
+            "otherEntityName": "proj",
+            "relationshipType": "many-to-one",
+            "otherEntityField": "name"
+        }
+    ],
+    "fields": [
+        {
+            "fieldName": "name",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "path",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "sourceLanguagePath",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "targetLanguagePath",
+            "fieldType": "String"
+        }
+    ],
+    "changelogDate": "20171108131425",
+    "dto": "mapstruct",
+    "service": "serviceClass",
+    "entityTableName": "proj_files",
+    "jpaMetamodelFiltering": true,
+    "pagination": "pager",
+    "microserviceName": "translate",
+    "searchEngine": "elasticsearch"
+}

@@ -1,0 +1,26 @@
+{
+    "fluentMethods": true,
+    "relationships": [
+        {
+            "relationshipName": "projFiles",
+            "otherEntityName": "projFiles",
+            "relationshipType": "many-to-one",
+            "otherEntityField": "name"
+        },
+        {
+            "relationshipName": "dict",
+            "otherEntityName": "dictEn2Cn",
+            "relationshipType": "many-to-one",
+            "otherEntityField": "english"
+        }
+    ],
+    "fields": [],
+    "changelogDate": "20171108131754",
+    "dto": "mapstruct",
+    "service": "serviceClass",
+    "entityTableName": "proj_file2dict",
+    "jpaMetamodelFiltering": true,
+    "pagination": "pager",
+    "microserviceName": "translate",
+    "searchEngine": "elasticsearch"
+}

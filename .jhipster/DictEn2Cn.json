@@ -1,0 +1,46 @@
+{
+    "fluentMethods": true,
+    "relationships": [
+        {
+            "relationshipName": "source",
+            "otherEntityName": "dictSource",
+            "relationshipType": "many-to-one",
+            "otherEntityField": "name"
+        }
+    ],
+    "fields": [
+        {
+            "fieldName": "english",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "chinese",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "hits",
+            "fieldType": "Long"
+        },
+        {
+            "fieldName": "enable",
+            "fieldType": "Enabled",
+            "fieldValues": "X,Y,N"
+        },
+        {
+            "fieldName": "modified_date",
+            "fieldType": "ZonedDateTime"
+        },
+        {
+            "fieldName": "consumed_date",
+            "fieldType": "ZonedDateTime"
+        }
+    ],
+    "changelogDate": "20171108124247",
+    "dto": "mapstruct",
+    "service": "serviceClass",
+    "entityTableName": "dict_en2cn",
+    "jpaMetamodelFiltering": true,
+    "pagination": "pager",
+    "microserviceName": "translate",
+    "searchEngine": "elasticsearch"
+}

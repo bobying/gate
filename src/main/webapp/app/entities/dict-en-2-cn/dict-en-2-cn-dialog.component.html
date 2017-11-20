@@ -29,25 +29,11 @@
         </div>
         <div class="form-group">
             <label class="form-control-label" jhiTranslate="gateApp.dictEn2Cn.enable" for="field_enable">Enable</label>
-            <select class="form-control" name="enable" [(ngModel)]="dictEn2Cn.enable" id="field_enable" >
+            <select class="form-control" ng-change='onEnableChange()' name="enable" [(ngModel)]="dictEn2Cn.enable" id="field_enable" >
                 <option value="X">{{'gateApp.Enabled.X' | translate}}</option>
                 <option value="Y">{{'gateApp.Enabled.Y' | translate}}</option>
                 <option value="N">{{'gateApp.Enabled.N' | translate}}</option>
             </select>
-        </div>
-        <div class="form-group">
-            <label class="form-control-label" jhiTranslate="gateApp.dictEn2Cn.modified_date" for="field_modified_date">Modified Date</label>
-            <div class="d-flex">
-                <input id="field_modified_date" type="datetime-local" class="form-control" name="modified_date" [(ngModel)]="dictEn2Cn.modified_date"
-                  />
-            </div>
-        </div>
-        <div class="form-group">
-            <label class="form-control-label" jhiTranslate="gateApp.dictEn2Cn.consumed_date" for="field_consumed_date">Consumed Date</label>
-            <div class="d-flex">
-                <input id="field_consumed_date" type="datetime-local" class="form-control" name="consumed_date" [(ngModel)]="dictEn2Cn.consumed_date"
-                  />
-            </div>
         </div>
 
         <div class="form-group">

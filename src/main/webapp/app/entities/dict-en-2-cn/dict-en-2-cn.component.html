@@ -36,6 +36,7 @@
             <th jhiSortBy="enable"><span jhiTranslate="gateApp.dictEn2Cn.enable">Enable</span> <span class="fa fa-sort"></span></th>
             <th jhiSortBy="modified_date"><span jhiTranslate="gateApp.dictEn2Cn.modified_date">Modified Date</span> <span class="fa fa-sort"></span></th>
             <th jhiSortBy="consumed_date"><span jhiTranslate="gateApp.dictEn2Cn.consumed_date">Consumed Date</span> <span class="fa fa-sort"></span></th>
+            <th jhiSortBy="priority"><span jhiTranslate="gateApp.dictEn2Cn.priority">Priority</span> <span class="fa fa-sort"></span></th>
             <th jhiSortBy="sourceName"><span jhiTranslate="gateApp.dictEn2Cn.source">Source</span> <span class="fa fa-sort"></span></th>
             <th></th>
             </tr>
@@ -49,6 +50,7 @@
                 <td jhiTranslate="{{'gateApp.Enabled.' + dictEn2Cn.enable}}">{{dictEn2Cn.enable}}</td>
                 <td>{{dictEn2Cn.modified_date | date:'medium'}}</td>
                 <td>{{dictEn2Cn.consumed_date | date:'medium'}}</td>
+                <td>{{dictEn2Cn.priority}}</td>
                 <td>
                     <div *ngIf="dictEn2Cn.sourceId">
                         <a [routerLink]="['../dict-source', dictEn2Cn.sourceId  ]" >{{dictEn2Cn.sourceName}}</a>

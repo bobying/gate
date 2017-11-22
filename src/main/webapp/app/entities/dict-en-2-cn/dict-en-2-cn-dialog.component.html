@@ -29,20 +29,18 @@
         </div>
         <div class="form-group">
             <label class="form-control-label" jhiTranslate="gateApp.dictEn2Cn.enable" for="field_enable">Enable</label>
-            <select class="form-control" ng-change='onEnableChange()' name="enable" [(ngModel)]="dictEn2Cn.enable" id="field_enable" >
+            <select class="form-control" name="enable" [(ngModel)]="dictEn2Cn.enable" id="field_enable" >
                 <option value="X">{{'gateApp.Enabled.X' | translate}}</option>
                 <option value="Y">{{'gateApp.Enabled.Y' | translate}}</option>
                 <option value="N">{{'gateApp.Enabled.N' | translate}}</option>
             </select>
         </div>
-
         <div class="form-group">
-            <label class="form-control-label" jhiTranslate="gateApp.dictEn2Cn.source" for="field_source">Source</label>
-            <select class="form-control" id="field_source" name="source" [(ngModel)]="dictEn2Cn.sourceId" >
-                <option [ngValue]="null"></option>
-                <option [ngValue]="dictSourceOption.id" *ngFor="let dictSourceOption of dictsources; trackBy: trackDictSourceById">{{dictSourceOption.name}}</option>
-            </select>
+            <label class="form-control-label" jhiTranslate="gateApp.dictEn2Cn.priority" for="field_priority">Priority</label>
+            <input type="number" class="form-control" name="priority" id="field_priority"
+                [(ngModel)]="dictEn2Cn.priority"  />
         </div>
+
     </div>
     <div class="modal-footer">
         <button type="button" class="btn btn-secondary" data-dismiss="modal" (click)="clear()">

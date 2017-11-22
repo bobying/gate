@@ -19,6 +19,7 @@
             "enable": "Enable",
             "modified_date": "Modified Date",
             "consumed_date": "Consumed Date",
+            "priority": "Priority",
             "source": "Source"
         }
     },

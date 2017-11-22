@@ -33,6 +33,10 @@
         {
             "fieldName": "consumed_date",
             "fieldType": "ZonedDateTime"
+        },
+        {
+            "fieldName": "priority",
+            "fieldType": "Integer"
         }
     ],
     "changelogDate": "20171108124247",

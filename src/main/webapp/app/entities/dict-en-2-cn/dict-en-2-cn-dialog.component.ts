@@ -52,10 +52,6 @@ export class DictEn2CnDialogComponent implements OnInit {
                 this.dictEn2CnService.create(this.dictEn2Cn));
         }
     }
-    
-    onEnableChange() {
-            this.dictEn2Cn.hits = 0;
-    }
 
     private subscribeToSaveResponse(result: Observable<DictEn2Cn>) {
         result.subscribe((res: DictEn2Cn) =>

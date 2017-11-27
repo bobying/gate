@@ -16,6 +16,7 @@ export class DictEn2Cn implements BaseEntity {
         public modified_date?: any,
         public consumed_date?: any,
         public priority?: number,
+        public regex?: number,
         public sourceId?: number,
     ) {
     }

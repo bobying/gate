@@ -20,6 +20,7 @@
             "modified_date": "Modified Date",
             "consumed_date": "Consumed Date",
             "priority": "Priority",
+            "regex": "Regex",
             "source": "Source"
         }
     },

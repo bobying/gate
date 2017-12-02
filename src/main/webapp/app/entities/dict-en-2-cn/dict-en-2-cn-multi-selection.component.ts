@@ -36,7 +36,7 @@ export class DictEn2CnMultiSelectionComponent extends BaseFormField<Array<DictEn
           .distinctUntilChanged()
           .do(() => this.searching = true)
           .switchMap((term) =>
-              this.dictEn2CnService.query({}, {'english.contains': term})
+              this.dictEn2CnService.query({}, {'name.contains': term})
                   .do(() => this.searchFailed = false)
                   .map((r: ResponseWrapper) => r.json)
                   .catch(() => {

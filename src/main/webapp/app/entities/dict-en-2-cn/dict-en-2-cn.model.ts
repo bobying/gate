@@ -1,10 +1,14 @@
 import { BaseEntity } from './../../shared';
 
-export const enum Enabled {
-    'X',
-    'Y',
-    'N'
+const Enabled = {
+    X : 'X' as 'X',
+    Y : 'Y' as 'Y',
+    N : 'N' as 'N'
 }
+
+type Enabled = (typeof Enabled)[keyof typeof Enabled];
+
+export { Enabled }
 
 export class DictEn2Cn implements BaseEntity {
     constructor(

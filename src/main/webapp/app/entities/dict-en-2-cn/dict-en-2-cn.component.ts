@@ -50,11 +50,11 @@ currentAccount: any;
 
     loadAll() {
         if (this.currentSearch) {
-            this.dictEn2CnService.search({
+            this.dictEn2CnService.query({
                 page: this.page - 1,
                 query: this.currentSearch,
                 size: this.itemsPerPage,
-                sort: this.sort()}).subscribe(
+                sort: this.sort()}, {english.contains: this.currentSearch}).subscribe(
                     (res: ResponseWrapper) => this.onSuccess(res.json, res.headers),
                     (res: ResponseWrapper) => this.onError(res.json)
                 );

@@ -11,6 +11,8 @@ import {
     DictSourcePopupComponent,
     DictSourceDeletePopupComponent,
     DictSourceDeleteDialogComponent,
+    DictSourceSelectionComponent,
+    DictSourceMultiSelectionComponent,
     dictSourceRoute,
     dictSourcePopupRoute,
     DictSourceResolvePagingParams,
@@ -24,7 +26,7 @@ const ENTITY_STATES = [
 @NgModule({
     imports: [
         GateSharedModule,
-        RouterModule.forRoot(ENTITY_STATES, { useHash: true })
+        RouterModule.forChild(ENTITY_STATES)
     ],
     declarations: [
         DictSourceComponent,
@@ -33,6 +35,8 @@ const ENTITY_STATES = [
         DictSourceDeleteDialogComponent,
         DictSourcePopupComponent,
         DictSourceDeletePopupComponent,
+        DictSourceSelectionComponent,
+        DictSourceMultiSelectionComponent,
     ],
     entryComponents: [
         DictSourceComponent,
@@ -46,6 +50,10 @@ const ENTITY_STATES = [
         DictSourcePopupService,
         DictSourceResolvePagingParams,
     ],
-    schemas: [CUSTOM_ELEMENTS_SCHEMA]
+    schemas: [CUSTOM_ELEMENTS_SCHEMA],
+    exports: [
+        DictSourceSelectionComponent,
+        DictSourceMultiSelectionComponent,
+    ]
 })
 export class GateDictSourceModule {}

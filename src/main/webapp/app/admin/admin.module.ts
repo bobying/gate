@@ -36,7 +36,7 @@ import {
 @NgModule({
     imports: [
         GateSharedModule,
-        RouterModule.forRoot(adminState, { useHash: true }),
+        RouterModule.forChild(adminState),
         GateElasticsearchReindexModule,
         /* jhipster-needle-add-admin-module - JHipster will add admin modules here */
     ],

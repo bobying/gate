@@ -1,7 +1,7 @@
 import { Injectable } from '@angular/core';
 import { Resolve, ActivatedRouteSnapshot, RouterStateSnapshot, Routes } from '@angular/router';
 
-import { UserRouteAccessService } from '../../shared';
+import { UserRouteAccessService, AuthoritiesConstants, Principal } from '../../shared';
 import { JhiPaginationUtil } from 'ng-jhipster';
 
 import { DictSourceComponent } from './dict-source.component';
@@ -33,7 +33,7 @@ export const dictSourceRoute: Routes = [
             'pagingParams': DictSourceResolvePagingParams
         },
         data: {
-            authorities: ['ROLE_USER'],
+            authorities: [AuthoritiesConstants.USER],
             pageTitle: 'gateApp.dictSource.home.title'
         },
         canActivate: [UserRouteAccessService]
@@ -41,7 +41,7 @@ export const dictSourceRoute: Routes = [
         path: 'dict-source/:id',
         component: DictSourceDetailComponent,
         data: {
-            authorities: ['ROLE_USER'],
+            authorities: [AuthoritiesConstants.USER],
             pageTitle: 'gateApp.dictSource.home.title'
         },
         canActivate: [UserRouteAccessService]
@@ -53,7 +53,7 @@ export const dictSourcePopupRoute: Routes = [
         path: 'dict-source-new',
         component: DictSourcePopupComponent,
         data: {
-            authorities: ['ROLE_USER'],
+            authorities: [AuthoritiesConstants.USER],
             pageTitle: 'gateApp.dictSource.home.title'
         },
         canActivate: [UserRouteAccessService],
@@ -63,7 +63,7 @@ export const dictSourcePopupRoute: Routes = [
         path: 'dict-source/:id/edit',
         component: DictSourcePopupComponent,
         data: {
-            authorities: ['ROLE_USER'],
+            authorities: [AuthoritiesConstants.USER],
             pageTitle: 'gateApp.dictSource.home.title'
         },
         canActivate: [UserRouteAccessService],
@@ -73,7 +73,7 @@ export const dictSourcePopupRoute: Routes = [
         path: 'dict-source/:id/delete',
         component: DictSourceDeletePopupComponent,
         data: {
-            authorities: ['ROLE_USER'],
+            authorities: [AuthoritiesConstants.USER],
             pageTitle: 'gateApp.dictSource.home.title'
         },
         canActivate: [UserRouteAccessService],

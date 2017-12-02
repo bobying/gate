@@ -3,6 +3,7 @@ import { Http, Response } from '@angular/http';
 import { Observable } from 'rxjs/Rx';
 
 import { User } from './user.model';
+import { AuthoritiesConstants } from '../auth/authorities-constants';
 import { ResponseWrapper } from '../model/response-wrapper.model';
 import { createRequestOption } from '../model/request-util';
 
@@ -22,8 +23,8 @@ export class UserService {
             .map((res: Response) => this.convertResponse(res));
     }
 
-    find(login: string): Observable<User> {
-        return this.http.get(`${this.resourceUrl}/${login}`).map((res: Response) => res.json());
+    find(id: string): Observable<User> {
+        return this.http.get(`${this.resourceUrl}/${id}`).map((res: Response) => res.json());
     }
 
     query(req?: any): Observable<ResponseWrapper> {
@@ -32,8 +33,8 @@ export class UserService {
             .map((res: Response) => this.convertResponse(res));
     }
 
-    delete(login: string): Observable<Response> {
-        return this.http.delete(`${this.resourceUrl}/${login}`);
+    delete(id: string): Observable<Response> {
+        return this.http.delete(`${this.resourceUrl}/${id}`);
     }
 
     authorities(): Observable<string[]> {

@@ -1,5 +1,5 @@
 # gate
-This application was generated using JHipster 4.10.0, you can find documentation and help at [http://www.jhipster.tech/documentation-archive/v4.10.0](http://www.jhipster.tech/documentation-archive/v4.10.0).
+This application was generated using JHipster 4.10.2, you can find documentation and help at [http://www.jhipster.tech/documentation-archive/v4.10.2](http://www.jhipster.tech/documentation-archive/v4.10.2).
 
 This is a "gateway" application intended to be part of a microservice architecture, please refer to the [Doing microservices with JHipster][] page of the documentation for more information.
 
@@ -106,7 +106,7 @@ To ensure everything worked, run:
 
     java -jar target/*.war
 
-Then navigate to [http://localhost:9080](http://localhost:9080) in your browser.
+Then navigate to [http://localhost:8080](http://localhost:8080) in your browser.
 
 Refer to [Using JHipster in production][] for more details.
 
@@ -153,14 +153,14 @@ For more information refer to [Using Docker and Docker-Compose][], this page als
 To configure CI for your project, run the ci-cd sub-generator (`jhipster ci-cd`), this will let you generate configuration files for a number of Continuous Integration systems. Consult the [Setting up Continuous Integration][] page for more information.
 
 [JHipster Homepage and latest documentation]: http://www.jhipster.tech
-[JHipster 4.10.0 archive]: http://www.jhipster.tech/documentation-archive/v4.10.0
-[Doing microservices with JHipster]: http://www.jhipster.tech/documentation-archive/v4.10.0/microservices-architecture/
-[Using JHipster in development]: http://www.jhipster.tech/documentation-archive/v4.10.0/development/
-[Service Discovery and Configuration with the JHipster-Registry]: http://www.jhipster.tech/documentation-archive/v4.10.0/microservices-architecture/#jhipster-registry
-[Using Docker and Docker-Compose]: http://www.jhipster.tech/documentation-archive/v4.10.0/docker-compose
-[Using JHipster in production]: http://www.jhipster.tech/documentation-archive/v4.10.0/production/
-[Running tests page]: http://www.jhipster.tech/documentation-archive/v4.10.0/running-tests/
-[Setting up Continuous Integration]: http://www.jhipster.tech/documentation-archive/v4.10.0/setting-up-ci/
+[JHipster 4.10.2 archive]: http://www.jhipster.tech/documentation-archive/v4.10.2
+[Doing microservices with JHipster]: http://www.jhipster.tech/documentation-archive/v4.10.2/microservices-architecture/
+[Using JHipster in development]: http://www.jhipster.tech/documentation-archive/v4.10.2/development/
+[Service Discovery and Configuration with the JHipster-Registry]: http://www.jhipster.tech/documentation-archive/v4.10.2/microservices-architecture/#jhipster-registry
+[Using Docker and Docker-Compose]: http://www.jhipster.tech/documentation-archive/v4.10.2/docker-compose
+[Using JHipster in production]: http://www.jhipster.tech/documentation-archive/v4.10.2/production/
+[Running tests page]: http://www.jhipster.tech/documentation-archive/v4.10.2/running-tests/
+[Setting up Continuous Integration]: http://www.jhipster.tech/documentation-archive/v4.10.2/setting-up-ci/
 
 
 [Node.js]: https://nodejs.org/

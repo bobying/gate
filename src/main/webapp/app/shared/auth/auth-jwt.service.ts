@@ -34,6 +34,6 @@ export class AuthServerProvider {
     }
 
     logout(): Observable<any> {
-        return this.http.post('/auth/logout', null);
+        return this.http.post('auth/logout', null);
     }
 }

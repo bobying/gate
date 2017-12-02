@@ -3,6 +3,7 @@
 ######################
 /target/www/**
 /src/test/javascript/coverage/
+/src/test/javascript/PhantomJS*/
 
 ######################
 # Node
@@ -115,7 +116,7 @@ Desktop.ini
 ######################
 # Logs
 ######################
-*.log
+*.log*
 
 ######################
 # Others

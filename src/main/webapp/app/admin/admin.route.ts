@@ -1,4 +1,5 @@
 import { Routes } from '@angular/router';
+import { AuthoritiesConstants } from '../shared';
 
 import {
     auditsRoute,
@@ -28,7 +29,7 @@ const ADMIN_ROUTES = [
 export const adminState: Routes = [{
     path: '',
     data: {
-        authorities: ['ROLE_ADMIN']
+        authorities: [AuthoritiesConstants.ADMIN]
     },
     canActivate: [UserRouteAccessService],
     children: ADMIN_ROUTES

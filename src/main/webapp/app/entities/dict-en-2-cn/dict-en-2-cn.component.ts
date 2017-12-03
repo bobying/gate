@@ -54,7 +54,7 @@ currentAccount: any;
                 page: this.page - 1,
                 query: this.currentSearch,
                 size: this.itemsPerPage,
-                sort: this.sort()}, {english.contains: this.currentSearch}).subscribe(
+                sort: this.sort()}, {"english.contains": this.currentSearch}).subscribe(
                     (res: ResponseWrapper) => this.onSuccess(res.json, res.headers),
                     (res: ResponseWrapper) => this.onError(res.json)
                 );

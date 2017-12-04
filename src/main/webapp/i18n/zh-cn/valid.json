@@ -1,9 +1,0 @@
-{
-    "gateApp": {
-        "Valid" : {
-            "null": "",
-            "valid": "valid",
-            "invalid": "invalid"
-        }
-    }
-}

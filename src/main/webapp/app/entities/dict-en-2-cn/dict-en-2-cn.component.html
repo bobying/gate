@@ -1,98 +1,143 @@
 <div>
-    <h2>
-        <span jhiTranslate="gateApp.dictEn2Cn.home.title">Dict En 2 Cns</span>
-        <button class="btn btn-primary float-right jh-create-entity create-dict-en-2-cn" [routerLink]="['/', { outlets: { popup: ['dict-en-2-cn-new'] } }]">
-            <span class="fa fa-plus"></span>
-            <span class="hidden-sm-down"  jhiTranslate="gateApp.dictEn2Cn.home.createLabel">
-            Create new Dict En 2 Cn
-            </span>
-        </button>
-    </h2>
-    <jhi-alert></jhi-alert>
-    <div class="row">
-        <div class="col-sm-12">
-            <form name="searchForm" class="form-inline">
-                <div class="input-group w-100 mt-3">
-                    <input type="text" class="form-control" [(ngModel)]="currentSearch" id="currentSearch" name="currentSearch" placeholder="{{ 'gateApp.dictEn2Cn.home.search' | translate }}">
-                    <button class="input-group-addon btn btn-info" (click)="search(currentSearch)">
-                        <span class="fa fa-search"></span>
-                    </button>
-                    <button class="input-group-addon btn btn-danger" (click)="clear()" *ngIf="currentSearch">
-                        <span class="fa fa-trash-o"></span>
-                    </button>
-                </div>
-            </form>
-        </div>
-    </div>
-    <br/>
-    <div class="table-responsive" *ngIf="dictEn2Cns">
-        <table class="table table-striped">
-            <thead>
-            <tr jhiSort [(predicate)]="predicate" [(ascending)]="reverse" [callback]="transition.bind(this)">
-            <th jhiSortBy="id"><span jhiTranslate="global.field.id">ID</span> <span class="fa fa-sort"></span></th>
-            <th jhiSortBy="english"><span jhiTranslate="gateApp.dictEn2Cn.english">English</span> <span class="fa fa-sort"></span></th>
-            <th jhiSortBy="chinese"><span jhiTranslate="gateApp.dictEn2Cn.chinese">Chinese</span> <span class="fa fa-sort"></span></th>
-            <th jhiSortBy="hits"><span jhiTranslate="gateApp.dictEn2Cn.hits">Hits</span> <span class="fa fa-sort"></span></th>
-            <th jhiSortBy="enable"><span jhiTranslate="gateApp.dictEn2Cn.enable">Enable</span> <span class="fa fa-sort"></span></th>
-            <th jhiSortBy="modified_date"><span jhiTranslate="gateApp.dictEn2Cn.modified_date">Modified Date</span> <span class="fa fa-sort"></span></th>
-            <th jhiSortBy="consumed_date"><span jhiTranslate="gateApp.dictEn2Cn.consumed_date">Consumed Date</span> <span class="fa fa-sort"></span></th>
-            <th jhiSortBy="priority"><span jhiTranslate="gateApp.dictEn2Cn.priority">Priority</span> <span class="fa fa-sort"></span></th>
-            <th jhiSortBy="regex"><span jhiTranslate="gateApp.dictEn2Cn.regex">Regex</span> <span class="fa fa-sort"></span></th>
-            <th jhiSortBy="sourceName"><span jhiTranslate="gateApp.dictEn2Cn.source">Source</span> <span class="fa fa-sort"></span></th>
-            <th></th>
-            </tr>
-            </thead>
-            <tbody>
-            <tr *ngFor="let dictEn2Cn of dictEn2Cns ;trackBy: trackId">
-                <td><a [routerLink]="['../dict-en-2-cn', dictEn2Cn.id ]">{{dictEn2Cn.id}}</a></td>
-                <td>{{dictEn2Cn.english}}</td>
-                <td>{{dictEn2Cn.chinese}}</td>
-                <td>{{dictEn2Cn.hits}}</td>
-                <td jhiTranslate="{{'gateApp.Enabled.' + dictEn2Cn.enable}}">{{dictEn2Cn.enable}}</td>
-                <td>{{dictEn2Cn.modified_date | date:'medium'}}</td>
-                <td>{{dictEn2Cn.consumed_date | date:'medium'}}</td>
-                <td>{{dictEn2Cn.priority}}</td>
-                <td>{{dictEn2Cn.regex}}</td>
-                <td>
-                    <div *ngIf="dictEn2Cn.sourceId">
-                        <a [routerLink]="['../dict-source', dictEn2Cn.sourceId  ]" >{{dictEn2Cn.sourceName}}</a>
-                    </div>
-                </td>
-                <td class="text-right">
-                    <div class="btn-group flex-btn-group-container">
-                        <button type="submit"
-                                [routerLink]="['../dict-en-2-cn', dictEn2Cn.id ]"
-                                class="btn btn-info btn-sm">
-                            <span class="fa fa-eye"></span>
-                            <span class="d-none d-md-inline" jhiTranslate="entity.action.view">View</span>
-                        </button>
-                        <button type="submit"
-                                [routerLink]="['/', { outlets: { popup: 'dict-en-2-cn/'+ dictEn2Cn.id + '/edit'} }]"
-                                replaceUrl="true"
-                                class="btn btn-primary btn-sm">
-                            <span class="fa fa-pencil"></span>
-                            <span class="d-none d-md-inline" jhiTranslate="entity.action.edit">Edit</span>
-                        </button>
-                        <button type="submit"
-                                [routerLink]="['/', { outlets: { popup: 'dict-en-2-cn/'+ dictEn2Cn.id + '/delete'} }]"
-                                replaceUrl="true"
-                                class="btn btn-danger btn-sm">
-                            <span class="fa fa-remove"></span>
-                            <span class="d-none d-md-inline" jhiTranslate="entity.action.delete">Delete</span>
-                        </button>
-                    </div>
-                </td>
-            </tr>
-            </tbody>
-        </table>
-    </div>
-        <!-- Pager is not implemented yet, so this is normal pagination instead -->
-        <div *ngIf="dictEn2Cns && dictEn2Cns.length">
-            <div class="row justify-content-center">
-                <jhi-item-count [page]="page" [total]="queryCount" [itemsPerPage]="itemsPerPage"></jhi-item-count>
-            </div>
-            <div class="row justify-content-center">
-                <ngb-pagination [collectionSize]="totalItems" [(page)]="page"  (pageChange)="loadPage(page)"></ngb-pagination>
-            </div>
-        </div>
+	<h2>
+		<span jhiTranslate="gateApp.dictEn2Cn.home.title">Dict En 2 Cns</span>
+		<button
+			class="btn btn-primary float-right jh-create-entity create-dict-en-2-cn"
+			[routerLink]="['/', { outlets: { popup: ['dict-en-2-cn-new'] } }]">
+			<span class="fa fa-plus"></span> <span class="hidden-sm-down"
+				jhiTranslate="gateApp.dictEn2Cn.home.createLabel"> Create new
+				Dict En 2 Cn </span>
+		</button>
+	</h2>
+	<jhi-alert></jhi-alert>
+	<div class="row">
+		<div class="col-sm-12">
+			<form name="searchForm" class="form-inline">
+				<div class="input-group w-100 mt-3">
+					<input type="text" class="form-control" [(ngModel)]="currentSearch"
+						id="currentSearch" name="currentSearch"
+						placeholder="{{ 'gateApp.dictEn2Cn.home.search' | translate }}">
+					<button class="input-group-addon btn btn-info"
+						(click)="search(currentSearch)">
+						<span class="fa fa-search"></span>
+					</button>
+					<button class="input-group-addon btn btn-danger" (click)="clear()"
+						*ngIf="currentSearch">
+						<span class="fa fa-trash-o"></span>
+					</button>
+				</div>
+			</form>
+		</div>
+	</div>
+	<br />
+	<div class="table-responsive" *ngIf="dictEn2Cns">
+		<table class="table table-striped">
+			<thead>
+				<tr jhiSort [(predicate)]="predicate" [(ascending)]="reverse"
+					[callback]="transition.bind(this)">
+					<th jhiSortBy="id"><span jhiTranslate="global.field.id">ID</span>
+						<span class="fa fa-sort"></span></th>
+					<th jhiSortBy="english"><span
+						jhiTranslate="gateApp.dictEn2Cn.english">English</span> <span
+						class="fa fa-sort"></span></th>
+					<th jhiSortBy="chinese"><span
+						jhiTranslate="gateApp.dictEn2Cn.chinese">Chinese</span> <span
+						class="fa fa-sort"></span></th>
+					<th jhiSortBy="hits"><span
+						jhiTranslate="gateApp.dictEn2Cn.hits">Hits</span> <span
+						class="fa fa-sort"></span></th>
+					<th jhiSortBy="enable"><span
+						jhiTranslate="gateApp.dictEn2Cn.enable">Enable</span> <span
+						class="fa fa-sort"></span></th>
+					<th jhiSortBy="priority"><span
+						jhiTranslate="gateApp.dictEn2Cn.priority">Priority</span> <span
+						class="fa fa-sort"></span></th>
+					<th jhiSortBy="regex"><span
+						jhiTranslate="gateApp.dictEn2Cn.regex">Regex</span> <span
+						class="fa fa-sort"></span></th>
+					<th jhiSortBy="sourceName"><span
+						jhiTranslate="gateApp.dictEn2Cn.source">Source</span> <span
+						class="fa fa-sort"></span></th>
+					<th></th>
+				</tr>
+				<tr>
+					<th><input type="text" placeholder="id" ng-model="query.id"></th>
+					<th><input type="text" placeholder="english"
+						ng-model="query.english"></th>
+					<th><input type="text" placeholder="chinese"
+						ng-model="query.chinese"></th>
+					<th><input type="number" placeholder="hits"
+						ng-model="query.hits"></th>
+					<th><select class="form-control" name="enable"
+						[(ngModel)]="dictEn2Cn.enable" id="field_enable">
+							<option value="X">{{'gateApp.Enabled.X' | translate}}</option>
+							<option value="Y">{{'gateApp.Enabled.Y' | translate}}</option>
+							<option value="N">{{'gateApp.Enabled.N' | translate}}</option>
+					</select></th>
+					<th><input type="number" placeholder="priority"
+						ng-model="query.priority"></th>
+					<th><input type="number" placeholder="regex"
+						ng-model="query.regex"></th>
+					<th><select class="form-control" id="field_source"
+						name="source" [(ngModel)]="query.sourceId">
+							<option [ngValue]="null"></option>
+							<option [ngValue]="dictSourceOption.id"
+								*ngFor="let dictSourceOption of dictsources; trackBy: trackDictSourceById">{{dictSourceOption.name}}</option>
+					</select></th>
+					<th></th>
+					<th></th>
+					<th></th>
+				</tr>
+			</thead>
+			<tbody>
+				<tr *ngFor="let dictEn2Cn of dictEn2Cns ;trackBy: trackId">
+					<td><a [routerLink]="['../dict-en-2-cn', dictEn2Cn.id ]">{{dictEn2Cn.id}}</a></td>
+					<td>{{dictEn2Cn.english}}</td>
+					<td>{{dictEn2Cn.chinese}}</td>
+					<td>{{dictEn2Cn.hits}}</td>
+					<td jhiTranslate="{{'gateApp.Enabled.' + dictEn2Cn.enable}}">{{dictEn2Cn.enable}}</td>
+					<td>{{dictEn2Cn.priority}}</td>
+					<td>{{dictEn2Cn.regex}}</td>
+					<td>
+						<div *ngIf="dictEn2Cn.sourceId">
+							<a [routerLink]="['../dict-source', dictEn2Cn.sourceId  ]">{{dictEn2Cn.sourceName}}</a>
+						</div>
+					</td>
+					<td class="text-right">
+						<div class="btn-group flex-btn-group-container">
+							<button type="submit"
+								[routerLink]="['../dict-en-2-cn', dictEn2Cn.id ]"
+								class="btn btn-info btn-sm">
+								<span class="fa fa-eye"></span> <span class="d-none d-md-inline"
+									jhiTranslate="entity.action.view">View</span>
+							</button>
+							<button type="submit"
+								[routerLink]="['/', { outlets: { popup: 'dict-en-2-cn/'+ dictEn2Cn.id + '/edit'} }]"
+								replaceUrl="true" class="btn btn-primary btn-sm">
+								<span class="fa fa-pencil"></span> <span
+									class="d-none d-md-inline" jhiTranslate="entity.action.edit">Edit</span>
+							</button>
+							<button type="submit"
+								[routerLink]="['/', { outlets: { popup: 'dict-en-2-cn/'+ dictEn2Cn.id + '/delete'} }]"
+								replaceUrl="true" class="btn btn-danger btn-sm">
+								<span class="fa fa-remove"></span> <span
+									class="d-none d-md-inline" jhiTranslate="entity.action.delete">Delete</span>
+							</button>
+						</div>
+					</td>
+				</tr>
+			</tbody>
+		</table>
+	</div>
+	<!-- Pager is not implemented yet, so this is normal pagination instead -->
+	<div *ngIf="dictEn2Cns && dictEn2Cns.length">
+		<div class="row justify-content-center">
+			<jhi-item-count [page]="page" [total]="queryCount"
+				[itemsPerPage]="itemsPerPage"></jhi-item-count>
+		</div>
+		<div class="row justify-content-center">
+			<ngb-pagination [collectionSize]="totalItems" [maxSize]="5"
+				[(page)]="page" (pageChange)="loadPage(page)"></ngb-pagination>
+		</div>
+	</div>
 </div>

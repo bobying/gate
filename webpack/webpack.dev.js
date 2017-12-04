@@ -17,8 +17,6 @@ module.exports = webpackMerge(commonConfig({ env: ENV }), {
         proxy: [{
             context: [
                 '/uaa',
-                '/param',
-                '/user',
                 '/translate',
                 /* jhipster-needle-add-entity-to-webpack - JHipster will add entity api paths here */
                 '/api',
@@ -28,9 +26,12 @@ module.exports = webpackMerge(commonConfig({ env: ENV }), {
                 '/h2-console',
                 '/auth'
             ],
-            target: 'http://localhost:9080',
+            target: 'http://127.0.0.1:8080',
             secure: false
-        }]
+        }],
+        watchOptions: {
+            ignored: /node_modules/
+        }
     },
     entry: {
         polyfills: './src/main/webapp/app/polyfills',

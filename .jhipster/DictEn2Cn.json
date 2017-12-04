@@ -37,6 +37,10 @@
         {
             "fieldName": "priority",
             "fieldType": "Integer"
+        },
+        {
+            "fieldName": "regex",
+            "fieldType": "Integer"
         }
     ],
     "changelogDate": "20171108124247",

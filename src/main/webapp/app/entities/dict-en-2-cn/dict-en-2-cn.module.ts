@@ -11,6 +11,8 @@ import {
     DictEn2CnPopupComponent,
     DictEn2CnDeletePopupComponent,
     DictEn2CnDeleteDialogComponent,
+    DictEn2CnSelectionComponent,
+    DictEn2CnMultiSelectionComponent,
     dictEn2CnRoute,
     dictEn2CnPopupRoute,
     DictEn2CnResolvePagingParams,
@@ -24,7 +26,7 @@ const ENTITY_STATES = [
 @NgModule({
     imports: [
         GateSharedModule,
-        RouterModule.forRoot(ENTITY_STATES, { useHash: true })
+        RouterModule.forChild(ENTITY_STATES)
     ],
     declarations: [
         DictEn2CnComponent,
@@ -33,6 +35,8 @@ const ENTITY_STATES = [
         DictEn2CnDeleteDialogComponent,
         DictEn2CnPopupComponent,
         DictEn2CnDeletePopupComponent,
+        DictEn2CnSelectionComponent,
+        DictEn2CnMultiSelectionComponent,
     ],
     entryComponents: [
         DictEn2CnComponent,
@@ -46,6 +50,10 @@ const ENTITY_STATES = [
         DictEn2CnPopupService,
         DictEn2CnResolvePagingParams,
     ],
-    schemas: [CUSTOM_ELEMENTS_SCHEMA]
+    schemas: [CUSTOM_ELEMENTS_SCHEMA],
+    exports: [
+        DictEn2CnSelectionComponent,
+        DictEn2CnMultiSelectionComponent,
+    ]
 })
 export class GateDictEn2CnModule {}

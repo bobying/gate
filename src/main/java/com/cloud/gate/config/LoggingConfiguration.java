@@ -23,10 +23,13 @@ import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.boot.autoconfigure.condition.ConditionalOnProperty;
 import org.springframework.cloud.netflix.eureka.EurekaInstanceConfigBean;
+import org.springframework.cloud.context.config.annotation.RefreshScope;
 import org.springframework.context.annotation.Configuration;
+
 
 @Configuration
 @ConditionalOnProperty("eureka.client.enabled")
+@RefreshScope
 public class LoggingConfiguration {
 
     private static final String LOGSTASH_APPENDER_NAME = "LOGSTASH";
@@ -118,7 +121,7 @@ public class LoggingConfiguration {
         metricsFilter.start();
 
         for (ch.qos.logback.classic.Logger logger : context.getLoggerList()) {
-            for (Iterator<Appender<ILoggingEvent>> it = logger.iteratorForAppenders(); it.hasNext(); ) {
+            for (Iterator<Appender<ILoggingEvent>> it = logger.iteratorForAppenders(); it.hasNext();) {
                 Appender<ILoggingEvent> appender = it.next();
                 if (!appender.getName().equals(ASYNC_LOGSTASH_APPENDER_NAME)) {
                     log.debug("Filter metrics logs from the {} appender", appender.getName());

@@ -4,6 +4,7 @@ import com.cloud.gate.config.Constants;
 
 import org.springframework.data.domain.AuditorAware;
 import org.springframework.stereotype.Component;
+import java.util.Optional;
 
 /**
  * Implementation of AuditorAware based on Spring Security.
@@ -13,7 +14,7 @@ public class SpringSecurityAuditorAware implements AuditorAware<String> {
 
     @Override
     public String getCurrentAuditor() {
-        String userName = SecurityUtils.getCurrentUserLogin();
-        return userName != null ? userName : Constants.SYSTEM_ACCOUNT;
+        final Optional<String> userName = SecurityUtils.getCurrentUserLogin();
+        return userName.isPresent() ? userName.get() : Constants.SYSTEM_ACCOUNT;
     }
 }

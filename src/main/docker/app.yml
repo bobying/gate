@@ -10,7 +10,7 @@ services:
             - JHIPSTER_SLEEP=30 # gives time for the JHipster Registry to boot before the application
             - SPRING_DATA_ELASTICSEARCH_CLUSTER_NODES=gate-elasticsearch:9300
         ports:
-            - 9080:9080
+            - 8080:8080
     gate-mysql:
         extends:
             file: mysql.yml

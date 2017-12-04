@@ -15,17 +15,17 @@
         <div class="form-group">
             <label class="form-control-label" jhiTranslate="gateApp.dictEn2Cn.english" for="field_english">English</label>
             <input type="text" class="form-control" name="english" id="field_english"
-                [(ngModel)]="dictEn2Cn.english"  />
+                [(ngModel)]="dictEn2Cn.english" />
         </div>
         <div class="form-group">
             <label class="form-control-label" jhiTranslate="gateApp.dictEn2Cn.chinese" for="field_chinese">Chinese</label>
             <input type="text" class="form-control" name="chinese" id="field_chinese"
-                [(ngModel)]="dictEn2Cn.chinese"  />
+                [(ngModel)]="dictEn2Cn.chinese" />
         </div>
         <div class="form-group">
             <label class="form-control-label" jhiTranslate="gateApp.dictEn2Cn.hits" for="field_hits">Hits</label>
             <input type="number" class="form-control" name="hits" id="field_hits"
-                [(ngModel)]="dictEn2Cn.hits"  />
+                [(ngModel)]="dictEn2Cn.hits" />
         </div>
         <div class="form-group">
             <label class="form-control-label" jhiTranslate="gateApp.dictEn2Cn.enable" for="field_enable">Enable</label>
@@ -38,12 +38,20 @@
         <div class="form-group">
             <label class="form-control-label" jhiTranslate="gateApp.dictEn2Cn.priority" for="field_priority">Priority</label>
             <input type="number" class="form-control" name="priority" id="field_priority"
-                [(ngModel)]="dictEn2Cn.priority"  />
+                [(ngModel)]="dictEn2Cn.priority" />
         </div>
         <div class="form-group">
             <label class="form-control-label" jhiTranslate="gateApp.dictEn2Cn.regex" for="field_regex">Regex</label>
             <input type="number" class="form-control" name="regex" id="field_regex"
-                [(ngModel)]="dictEn2Cn.regex"  />
+                [(ngModel)]="dictEn2Cn.regex" />
+        </div>
+
+        <div class="form-group">
+            <label class="form-control-label" jhiTranslate="gateApp.dictEn2Cn.source" for="field_source">Source</label>
+            <select class="form-control" id="field_source" name="source" [(ngModel)]="dictEn2Cn.sourceId" >
+                <option [ngValue]="null"></option>
+                <option [ngValue]="dictSourceOption.id" *ngFor="let dictSourceOption of dictsources; trackBy: trackDictSourceById">{{dictSourceOption.name}}</option>
+            </select>
         </div>
     </div>
     <div class="modal-footer">

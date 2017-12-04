@@ -1,7 +1,7 @@
 import { Component, OnInit, OnDestroy } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 
-import { NgbActiveModal, NgbModalRef } from '@ng-bootstrap/ng-bootstrap';
+import { NgbActiveModal } from '@ng-bootstrap/ng-bootstrap';
 import { JhiEventManager } from 'ng-jhipster';
 
 import { UserModalService } from './user-modal.service';
@@ -66,7 +66,6 @@ export class UserMgmtDialogComponent implements OnInit {
 })
 export class UserDialogComponent implements OnInit, OnDestroy {
 
-    modalRef: NgbModalRef;
     routeSub: any;
 
     constructor(
@@ -76,10 +75,10 @@ export class UserDialogComponent implements OnInit, OnDestroy {
 
     ngOnInit() {
         this.routeSub = this.route.params.subscribe((params) => {
-            if ( params['login'] ) {
-                this.modalRef = this.userModalService.open(UserMgmtDialogComponent as Component, params['login']);
+            if ( params['id'] ) {
+                this.userModalService.open(UserMgmtDialogComponent as Component, params['id']);
             } else {
-                this.modalRef = this.userModalService.open(UserMgmtDialogComponent as Component);
+                this.userModalService.open(UserMgmtDialogComponent as Component);
             }
         });
     }

@@ -36,8 +36,8 @@ export class DictSourceService {
         });
     }
 
-    query(req?: any): Observable<ResponseWrapper> {
-        const options = createRequestOption(req);
+    query(req?: any, queryParams?: any): Observable<ResponseWrapper> {
+        const options = createRequestOption(req, queryParams);
         return this.http.get(this.resourceUrl, options)
             .map((res: Response) => this.convertResponse(res));
     }

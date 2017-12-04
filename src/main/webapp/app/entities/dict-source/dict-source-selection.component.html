@@ -1,0 +1,18 @@
+<i class="fa fa-search" aria-hidden="true"></i>
+
+<input id="typeahead-http" type="text" class="form-control"
+  #input
+  [class.is-invalid]="searchFailed" 
+  [(ngModel)]="selected"
+  [ngbTypeahead]="search"
+  (selectItem)="onSelect($event, input)"
+  [inputFormatter]="formatter"
+  [resultTemplate]="resTemplate"
+  placeholder="{{ 'gateApp.dictSource.searchfield.placeholder' | translate }}" />
+<br>
+<span *ngIf="searching" jhiTranslate="gateApp.dictSource.searchfield.searching">Searching...</span>
+<div class="invalid-feedback" *ngIf="searchFailed" jhiTranslate="gateApp.dictSource.searchfield.notFound">Sorry, not found.</div>
+
+<ng-template #resTemplate let-item="result" let-tm="term">
+  {{item.name}}
+</ng-template>

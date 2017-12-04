@@ -4,5 +4,7 @@ export * from './dict-source-type.service';
 export * from './dict-source-type-dialog.component';
 export * from './dict-source-type-delete-dialog.component';
 export * from './dict-source-type-detail.component';
+export * from './dict-source-type-selection.component';
+export * from './dict-source-type-multi-selection.component';
 export * from './dict-source-type.component';
 export * from './dict-source-type.route';

@@ -100,7 +100,7 @@ liquibase:
 #        keyAlias: gate
 # ===================================================================
 server:
-    port: 9080
+    port: 8080
 
 # ===================================================================
 # JHipster specific properties
@@ -138,7 +138,7 @@ jhipster:
             client-secret: internal
     mail: # specific JHipster mail property, for standard properties see MailProperties
         from: gate@localhost
-        base-url: http://127.0.0.1:9080
+        base-url: http://127.0.0.1:8080
     metrics: # DropWizard Metrics configuration, used by MetricsConfiguration
         jmx.enabled: true
         graphite: # Use the "graphite" Maven profile to have the Graphite dependencies

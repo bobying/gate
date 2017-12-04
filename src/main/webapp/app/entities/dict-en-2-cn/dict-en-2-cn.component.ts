@@ -19,6 +19,7 @@ currentAccount: any;
     success: any;
     eventSubscriber: Subscription;
     currentSearch: string;
+    query: DictEn2Cn;
     routeData: any;
     links: any;
     totalItems: any;
@@ -49,24 +50,45 @@ currentAccount: any;
     }
 
     loadAll() {
+    	queryArray?: any;
+    	
         if (this.currentSearch) {
-            this.dictEn2CnService.query({
+            this.dictEn2CnService.search({
                 page: this.page - 1,
                 query: this.currentSearch,
                 size: this.itemsPerPage,
-                sort: this.sort()}, {"english.contains": this.currentSearch}).subscribe(
+                sort: this.sort()}, {
+	                "id.in": this.query.id,
+	                "english.contains": this.query.english,
+	                "chinese.contains": this.query.chinese,
+	                "hits.in": this.query.hits,
+	                "enable.in": this.query.enable,
+	                "priority.contains": this.query.priority,
+	                "regex.contains": this.query.regex,
+	                "sourceId.contains": this.query.sourceId
+                }).subscribe(
                     (res: ResponseWrapper) => this.onSuccess(res.json, res.headers),
                     (res: ResponseWrapper) => this.onError(res.json)
                 );
             return;
         }
         this.dictEn2CnService.query({
-            page: this.page - 1,
-            size: this.itemsPerPage,
-            sort: this.sort()}).subscribe(
-            (res: ResponseWrapper) => this.onSuccess(res.json, res.headers),
-            (res: ResponseWrapper) => this.onError(res.json)
-        );
+                page: this.page - 1,
+                size: this.itemsPerPage,
+                sort: this.sort()}, {
+	                "id.in": this.query.id,
+	                "english.contains": this.query.english,
+	                "chinese.contains": this.query.chinese,
+	                "hits.in": this.query.hits,
+	                "enable.in": this.query.enable,
+	                "priority.contains": this.query.priority,
+	                "regex.contains": this.query.regex,
+	                "sourceId.contains": this.query.sourceId
+                }).subscribe(
+                    (res: ResponseWrapper) => this.onSuccess(res.json, res.headers),
+                    (res: ResponseWrapper) => this.onError(res.json)
+                );
+         );
     }
     loadPage(page: number) {
         if (page !== this.previousPage) {

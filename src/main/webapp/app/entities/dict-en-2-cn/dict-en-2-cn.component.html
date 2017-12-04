@@ -61,25 +61,25 @@
 					<th></th>
 				</tr>
 				<tr>
-					<th><input type="text" placeholder="id" ng-model="query.id"></th>
+					<th><input type="text" placeholder="id" [(ngModel)]="queryCritical.id"></th>
 					<th><input type="text" placeholder="english"
-						ng-model="query.english"></th>
+						[(ngModel)]="queryCritical.english"></th>
 					<th><input type="text" placeholder="chinese"
-						ng-model="query.chinese"></th>
+						[(ngModel)]="queryCritical.chinese"></th>
 					<th><input type="number" placeholder="hits"
-						ng-model="query.hits"></th>
+						[(ngModel)]="queryCritical.hits"></th>
 					<th><select class="form-control" name="enable"
-						[(ngModel)]="dictEn2Cn.enable" id="field_enable">
+						[(ngModel)]="queryCritical.enable" id="field_enable">
 							<option value="X">{{'gateApp.Enabled.X' | translate}}</option>
 							<option value="Y">{{'gateApp.Enabled.Y' | translate}}</option>
 							<option value="N">{{'gateApp.Enabled.N' | translate}}</option>
 					</select></th>
 					<th><input type="number" placeholder="priority"
-						ng-model="query.priority"></th>
+						[(ngModel)]="queryCritical.priority"></th>
 					<th><input type="number" placeholder="regex"
-						ng-model="query.regex"></th>
+						[(ngModel)]="queryCritical.regex"></th>
 					<th><select class="form-control" id="field_source"
-						name="source" [(ngModel)]="query.sourceId">
+						name="source" [(ngModel)]="queryCritical.sourceId">
 							<option [ngValue]="null"></option>
 							<option [ngValue]="dictSourceOption.id"
 								*ngFor="let dictSourceOption of dictsources; trackBy: trackDictSourceById">{{dictSourceOption.name}}</option>

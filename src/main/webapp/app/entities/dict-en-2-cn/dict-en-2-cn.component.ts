@@ -19,7 +19,7 @@ currentAccount: any;
     success: any;
     eventSubscriber: Subscription;
     currentSearch: string;
-    query: DictEn2Cn;
+    queryCritical: DictEn2Cn;
     routeData: any;
     links: any;
     totalItems: any;
@@ -46,26 +46,45 @@ currentAccount: any;
             this.reverse = data['pagingParams'].ascending;
             this.predicate = data['pagingParams'].predicate;
         });
+        this.queryCritical = new DictEn2Cn();
         this.currentSearch = activatedRoute.snapshot.params['search'] ? activatedRoute.snapshot.params['search'] : '';
     }
 
     loadAll() {
-    	
+        var cache = {}; 
+        
+//        if (this.queryCritical.id) {
+//            cache["id.in"] = this.queryCritical.id;
+//	}
+	if (this.queryCritical.english) {
+            cache["english.contains"] = this.queryCritical.english;    	
+        }
+	if (this.queryCritical.chinese) {
+	    cache["chinese.contains"] = this.queryCritical.chinese;
+        }
+        if (this.queryCritical.hits) {
+            cache["hits.in"] = this.queryCritical.hits;
+        }
+        if (this.queryCritical.enable) {
+            cache["enable.in"] = this.queryCritical.enable;
+        }
+        if (this.queryCritical.priority) {
+            cache["priority.in"] = this.queryCritical.priority;
+        }
+        if (this.queryCritical.regex) {
+            cache["regex.in"] = this.queryCritical.regex;
+        }
+        if (this.queryCritical.sourceId) {
+            cache["chinese.sourceId"] = this.queryCritical.sourceId;
+        }
+
         if (this.currentSearch) {
             this.dictEn2CnService.query({
                 page: this.page - 1,
                 query: this.currentSearch,
                 size: this.itemsPerPage,
-                sort: this.sort()}, {
-	                "id.in": this.query.id,
-	                "english.contains": this.query.english,
-	                "chinese.contains": this.query.chinese,
-	                "hits.in": this.query.hits,
-	                "enable.in": this.query.enable,
-	                "priority.contains": this.query.priority,
-	                "regex.contains": this.query.regex,
-	                "sourceId.contains": this.query.sourceId
-                }).subscribe(
+                sort: this.sort()}, cache
+                ).subscribe(
                     (res: ResponseWrapper) => this.onSuccess(res.json, res.headers),
                     (res: ResponseWrapper) => this.onError(res.json)
                 );
@@ -74,16 +93,8 @@ currentAccount: any;
         this.dictEn2CnService.query({
                 page: this.page - 1,
                 size: this.itemsPerPage,
-                sort: this.sort()}, {
-	                "id.in": this.query.id,
-	                "english.contains": this.query.english,
-	                "chinese.contains": this.query.chinese,
-	                "hits.in": this.query.hits,
-	                "enable.in": this.query.enable,
-	                "priority.contains": this.query.priority,
-	                "regex.contains": this.query.regex,
-	                "sourceId.contains": this.query.sourceId
-                }).subscribe(
+                sort: this.sort()}, cache
+                ).subscribe(
                     (res: ResponseWrapper) => this.onSuccess(res.json, res.headers),
                     (res: ResponseWrapper) => this.onError(res.json)
                 );

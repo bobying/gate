@@ -50,10 +50,9 @@ currentAccount: any;
     }
 
     loadAll() {
-    	queryArray?: any;
     	
         if (this.currentSearch) {
-            this.dictEn2CnService.search({
+            this.dictEn2CnService.query({
                 page: this.page - 1,
                 query: this.currentSearch,
                 size: this.itemsPerPage,
@@ -88,7 +87,7 @@ currentAccount: any;
                     (res: ResponseWrapper) => this.onSuccess(res.json, res.headers),
                     (res: ResponseWrapper) => this.onError(res.json)
                 );
-         );
+         return;
     }
     loadPage(page: number) {
         if (page !== this.previousPage) {

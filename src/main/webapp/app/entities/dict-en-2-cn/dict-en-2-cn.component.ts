@@ -53,28 +53,28 @@ currentAccount: any;
     loadAll() {
         var cache = {}; 
         
-//        if (this.queryCritical.id) {
-//            cache["id.in"] = this.queryCritical.id;
-//	}
+        if (this.queryCritical.id!=null) {
+            cache["id.in"] = this.queryCritical.id;
+	}
 	if (this.queryCritical.english) {
             cache["english.contains"] = this.queryCritical.english;    	
         }
 	if (this.queryCritical.chinese) {
 	    cache["chinese.contains"] = this.queryCritical.chinese;
         }
-        if (this.queryCritical.hits) {
+        if (this.queryCritical.hits!=null) {
             cache["hits.in"] = this.queryCritical.hits;
         }
-        if (this.queryCritical.enable) {
+        if (this.queryCritical.enable!=null) {
             cache["enable.in"] = this.queryCritical.enable;
         }
-        if (this.queryCritical.priority) {
+        if (this.queryCritical.priority!=null) {
             cache["priority.in"] = this.queryCritical.priority;
         }
-        if (this.queryCritical.regex) {
+        if (this.queryCritical.regex!=null) {
             cache["regex.in"] = this.queryCritical.regex;
         }
-        if (this.queryCritical.sourceId) {
+        if (this.queryCritical.sourceId!=null) {
             cache["chinese.sourceId"] = this.queryCritical.sourceId;
         }
 
